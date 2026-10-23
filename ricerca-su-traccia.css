@@ -1,0 +1,173 @@
+/* ==========================================================
+   RICERCA SU TRACCIA — REFINEMENT CROMATICO ISOLATO
+   ========================================================== */
+body.detail-tracking { min-width: 0; }
+
+/* Hero pulita: nessuna cornice sfalsata dietro alla fotografia. */
+.detail-tracking .page-hero-visual { padding: 0; }
+.detail-tracking .page-hero-visual::before { display: none; }
+.detail-tracking .page-hero-visual img {
+  box-shadow: 0 24px 64px rgba(36, 38, 31, 0.15);
+}
+.detail-tracking .page-hero-visual figcaption {
+  margin-top: 14px;
+  padding-inline: 2px;
+}
+
+/* Introduzione e ruoli sono un unico ambiente cromatico caldo. */
+.detail-tracking .tracking-intro {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-bottom: clamp(31px, 3vw, 43px);
+  background:
+    radial-gradient(circle at 94% 8%, rgba(184, 207, 191, 0.20), transparent 24rem),
+    linear-gradient(180deg, #f5efe6 0%, #f1e7da 100%);
+}
+.detail-tracking .tracking-roles {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-top: 0;
+  background:
+    radial-gradient(circle at 6% 96%, rgba(165, 109, 73, 0.12), transparent 27rem),
+    linear-gradient(180deg, #f1e7da 0%, #eadbc8 100%);
+}
+.detail-tracking .tracking-roles::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -245px;
+  bottom: -390px;
+  width: 650px;
+  height: 650px;
+  border: 1px solid rgba(76, 101, 87, 0.08);
+  border-radius: 50%;
+}
+.detail-tracking .role-grid { gap: 14px; }
+.detail-tracking .role-card {
+  min-height: 390px;
+  border-color: rgba(47, 58, 50, 0.15);
+  background: var(--cream);
+  box-shadow:
+    0 15px 38px rgba(44, 43, 35, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+.detail-tracking .role-card::before {
+  background-position: var(--card-position, 75% 50%);
+  opacity: 0.86;
+  filter: saturate(0.78) contrast(0.97) brightness(0.99);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.08) 24%, rgba(0,0,0,.73) 62%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.08) 24%, rgba(0,0,0,.73) 62%, #000 100%);
+}
+.detail-tracking .role-card::after {
+  background: linear-gradient(90deg, rgba(255,253,248,.99) 0%, rgba(255,253,248,.93) 38%, rgba(255,253,248,.56) 64%, rgba(255,253,248,.05) 100%);
+}
+.detail-tracking .role-card:hover::before {
+  opacity: 0.93;
+  filter: saturate(0.88) contrast(0.99) brightness(1.02);
+  transform: scale(1.045);
+}
+.detail-tracking .role-card .visual-num {
+  color: #68806f;
+  font-size: clamp(3.7rem, 4.5vw, 4.8rem);
+}
+
+/* Processo: verde profondo con gradiente e numeri salvia. */
+.detail-tracking .tracking-process {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 6% 94%, rgba(169,111,78,.17), transparent 29rem),
+    radial-gradient(circle at 94% 8%, rgba(184,207,191,.16), transparent 28rem),
+    linear-gradient(106deg, #172820 0%, #2a493b 57%, #617762 100%);
+}
+.detail-tracking .tracking-process::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -300px;
+  bottom: -390px;
+  width: 690px;
+  height: 690px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 50%;
+}
+.detail-tracking .tracking-process .process-num { color: #b8cfbf; }
+
+/* Informazioni pratiche: pausa salvia-crema-argilla. */
+.detail-tracking .tracking-feature {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 3% 100%, rgba(91,120,101,.15), transparent 30rem),
+    linear-gradient(112deg, #dce6dc 0%, #f6f0e7 50%, #ead7be 100%);
+}
+.detail-tracking .tracking-feature::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -280px;
+  right: -210px;
+  width: 570px;
+  height: 570px;
+  border: 1px solid rgba(77,104,89,.10);
+  border-radius: 50%;
+}
+
+/* FAQ chiara e conclusione verde. */
+.detail-tracking .tracking-faq {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 92% 9%, rgba(184,207,191,.25), transparent 25rem),
+    linear-gradient(110deg, #efe2d1 0%, #fffdf8 50%, #e1e9e1 100%);
+}
+.detail-tracking .tracking-faq::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -360px;
+  left: -260px;
+  width: 660px;
+  height: 660px;
+  border: 1px solid rgba(117,72,49,.08);
+  border-radius: 50%;
+}
+.detail-tracking .tracking-faq .faq-list { background: rgba(255,253,248,.22); }
+.detail-tracking .tracking-final-cta {
+  background: linear-gradient(180deg, #e9ddcd 0%, #f5efe6 100%);
+}
+.detail-tracking .tracking-final-cta .cta-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(214,184,145,.18), transparent 24rem),
+    linear-gradient(104deg, #172820 0%, #2a493b 57%, #627864 100%);
+}
+.detail-tracking .tracking-final-cta .cta-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -190px;
+  bottom: -340px;
+  width: 620px;
+  height: 620px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 50%;
+}
+
+@media (max-width: 620px) {
+  .detail-tracking .role-card::before {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.16) 31%, #000 76%, #000 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.16) 31%, #000 76%, #000 100%);
+  }
+  .detail-tracking .role-card::after {
+    background: linear-gradient(90deg, rgba(255,253,248,.99) 0%, rgba(255,253,248,.91) 48%, rgba(255,253,248,.34) 80%, rgba(255,253,248,.05) 100%);
+  }
+  .detail-tracking .tracking-final-cta .cta-card { border-radius: 24px; }
+}

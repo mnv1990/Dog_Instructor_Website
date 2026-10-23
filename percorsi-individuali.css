@@ -1,0 +1,317 @@
+/* ==========================================================
+   PERCORSI INDIVIDUALI — REFINEMENT ISOLATO
+   Questo foglio agisce soltanto sulla pagina /percorsi-individuali/.
+   Homepage, pagina 404 e altre pagine restano inalterate.
+   ========================================================== */
+
+body.detail-individual {
+  min-width: 0;
+}
+
+/* Hero: immagine pulita, senza la cornice sfalsata che interferiva
+   con la didascalia. */
+.detail-individual .page-hero-visual {
+  padding: 0;
+}
+
+.detail-individual .page-hero-visual::before {
+  display: none;
+}
+
+.detail-individual .page-hero-visual img {
+  box-shadow: 0 24px 64px rgba(36, 38, 31, 0.15);
+}
+
+.detail-individual .page-hero-visual figcaption {
+  margin-top: 14px;
+  padding-inline: 2px;
+}
+
+/* "Quando può essere utile": introduzione e sei card sono ora un
+   unico blocco, con un solo fondo continuo. */
+.detail-individual .individual-use {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(78px, 7vw, 104px) 0 clamp(88px, 7vw, 110px);
+  background:
+    radial-gradient(circle at 96% 3%, rgba(184, 207, 191, 0.23), transparent 24rem),
+    linear-gradient(180deg, #f5efe6 0%, #efe4d4 100%);
+}
+
+.detail-individual .individual-use::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -220px;
+  bottom: -330px;
+  width: 620px;
+  height: 620px;
+  border: 1px solid rgba(76, 101, 87, 0.08);
+  border-radius: 50%;
+}
+
+.detail-individual .individual-use-intro {
+  display: grid;
+  grid-template-columns: minmax(330px, 0.86fr) minmax(0, 1.14fr);
+  align-items: end;
+  gap: clamp(52px, 7vw, 96px);
+  margin-bottom: clamp(34px, 3.5vw, 48px);
+}
+
+.detail-individual .individual-use-intro h2 {
+  max-width: 13ch;
+}
+
+.detail-individual .individual-use-intro > p {
+  max-width: 670px;
+  margin: 0 0 5px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.78;
+}
+
+.detail-individual .individual-use-grid {
+  gap: 14px;
+}
+
+.detail-individual .individual-use-card {
+  min-height: 305px;
+  padding: 24px 25px 26px;
+  border-color: rgba(47, 58, 50, 0.15);
+  background: var(--cream);
+  box-shadow:
+    0 13px 34px rgba(44, 43, 35, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+/* L'immagine resta piena a destra e si dissolve realmente verso
+   sinistra, dove vive il testo. */
+.detail-individual .individual-use-card::before {
+  background-position: var(--card-position, 74% 50%);
+  opacity: 0.84;
+  filter: saturate(0.78) contrast(0.97) brightness(0.99);
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.06) 25%,
+    rgba(0, 0, 0, 0.68) 61%,
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.06) 25%,
+    rgba(0, 0, 0, 0.68) 61%,
+    #000 100%
+  );
+}
+
+.detail-individual .individual-use-card::after {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 253, 248, 0.99) 0%,
+    rgba(255, 253, 248, 0.93) 38%,
+    rgba(255, 253, 248, 0.56) 63%,
+    rgba(255, 253, 248, 0.05) 100%
+  );
+}
+
+.detail-individual .individual-use-card:hover::before {
+  opacity: 0.92;
+  filter: saturate(0.88) contrast(0.99) brightness(1.02);
+}
+
+.detail-individual .individual-use-card .visual-num {
+  color: #68806f;
+  font-size: clamp(3.7rem, 4.5vw, 4.8rem);
+}
+
+.detail-individual .individual-use-card > div {
+  max-width: 69%;
+  margin-top: 43px;
+}
+
+.detail-individual .individual-use-card h3 {
+  margin-bottom: 11px;
+  font-size: clamp(1.45rem, 1.8vw, 1.72rem);
+}
+
+.detail-individual .individual-use-card p {
+  font-size: 0.88rem;
+  line-height: 1.56;
+}
+
+/* Strumenti e quotidianità: fondo autonomo, con gradiente salvia
+   verso crema e nuova fotografia dedicata. */
+.detail-individual .individual-feature {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 3% 100%, rgba(91, 120, 101, 0.15), transparent 30rem),
+    linear-gradient(112deg, #dce6dc 0%, #f6f0e7 50%, #ead7be 100%);
+}
+
+.detail-individual .individual-feature::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -280px;
+  right: -210px;
+  width: 570px;
+  height: 570px;
+  border: 1px solid rgba(77, 104, 89, 0.10);
+  border-radius: 50%;
+}
+
+.detail-individual .individual-feature .feature-grid {
+  grid-template-columns: minmax(390px, 1fr) minmax(0, 1fr);
+  gap: clamp(62px, 7vw, 96px);
+}
+
+.detail-individual .individual-feature figure img {
+  aspect-ratio: 1.42 / 1;
+  object-position: 50% 50%;
+  border-radius: 27px 104px 27px 27px;
+  box-shadow: 0 24px 62px rgba(48, 55, 46, 0.16);
+}
+
+.detail-individual .individual-feature figcaption {
+  max-width: 58ch;
+}
+
+/* Domande frequenti: una seconda pausa cromatica, distinta ma
+   coerente con la sezione precedente. */
+.detail-individual .individual-faq {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 92% 9%, rgba(184, 207, 191, 0.25), transparent 25rem),
+    linear-gradient(110deg, #efe2d1 0%, #fffdf8 50%, #e1e9e1 100%);
+}
+
+.detail-individual .individual-faq::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -360px;
+  left: -260px;
+  width: 660px;
+  height: 660px;
+  border: 1px solid rgba(117, 72, 49, 0.08);
+  border-radius: 50%;
+}
+
+.detail-individual .individual-faq .faq-list {
+  background: rgba(255, 253, 248, 0.22);
+}
+
+/* Primo contatto: gradiente più profondo e coerente con i verdi
+   del sito, senza introdurre una nuova fotografia. */
+.detail-individual .individual-final-cta {
+  background:
+    linear-gradient(180deg, #e9ddcd 0%, #f5efe6 100%);
+}
+
+.detail-individual .individual-final-cta .cta-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(214, 184, 145, 0.18), transparent 24rem),
+    linear-gradient(104deg, #172820 0%, #2a493b 57%, #627864 100%);
+}
+
+.detail-individual .individual-final-cta .cta-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -190px;
+  bottom: -340px;
+  width: 620px;
+  height: 620px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 50%;
+}
+
+@media (max-width: 1100px) {
+  .detail-individual .individual-use-card {
+    min-height: 315px;
+  }
+
+  .detail-individual .individual-use-card > div {
+    max-width: 72%;
+  }
+}
+
+@media (max-width: 860px) {
+  .detail-individual .individual-use-intro {
+    grid-template-columns: 1fr;
+    gap: 23px;
+  }
+
+  .detail-individual .individual-use-intro h2 {
+    max-width: 14ch;
+  }
+
+  .detail-individual .individual-feature .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 43px;
+  }
+
+  .detail-individual .individual-feature figure {
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 620px) {
+  .detail-individual .individual-use {
+    padding: 66px 0 72px;
+  }
+
+  .detail-individual .individual-use-intro {
+    margin-bottom: 30px;
+  }
+
+  .detail-individual .individual-use-intro > p {
+    font-size: 1rem;
+  }
+
+  .detail-individual .individual-use-grid {
+    gap: 12px;
+  }
+
+  .detail-individual .individual-use-card {
+    min-height: 300px;
+    padding: 22px 21px 24px;
+  }
+
+  .detail-individual .individual-use-card .visual-num {
+    font-size: 3.55rem;
+  }
+
+  .detail-individual .individual-use-card > div {
+    max-width: 79%;
+    margin-top: 44px;
+  }
+
+  .detail-individual .individual-use-card::before {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.16) 31%, #000 76%, #000 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.16) 31%, #000 76%, #000 100%);
+  }
+
+  .detail-individual .individual-use-card::after {
+    background: linear-gradient(90deg, rgba(255,253,248,.99) 0%, rgba(255,253,248,.91) 48%, rgba(255,253,248,.34) 80%, rgba(255,253,248,.05) 100%);
+  }
+
+  .detail-individual .individual-feature figure img {
+    aspect-ratio: 1.18 / 1;
+    border-radius: 24px 78px 24px 24px;
+  }
+
+  .detail-individual .individual-final-cta .cta-card {
+    border-radius: 24px;
+  }
+}

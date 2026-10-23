@@ -1,0 +1,36 @@
+{
+  "published": true,
+  "title": "Agenda di settembre",
+  "description": "Ricerca su traccia, classi di comunicazione e appuntamenti del mese.",
+  "image": "/assets/agenda/agenda-settembre.jpg",
+  "alt": "Locandina dell’agenda di settembre con le date delle attività di Valentina",
+  "updated": "2026-09-08",
+  "note": "Le classi in natura sono riservate ai binomi già inseriti nel percorso.",
+  "events": [
+    {
+      "day": "07",
+      "title": "Ricerca su traccia · Piste",
+      "location": ""
+    },
+    {
+      "day": "12",
+      "title": "Classe di comunicazione in natura",
+      "location": ""
+    },
+    {
+      "day": "16",
+      "title": "Ricerca su traccia · Piste",
+      "location": ""
+    },
+    {
+      "day": "23",
+      "title": "Ricerca su traccia · Piste",
+      "location": ""
+    },
+    {
+      "day": "26",
+      "title": "Classe di comunicazione in città",
+      "location": "Savona"
+    }
+  ]
+}
